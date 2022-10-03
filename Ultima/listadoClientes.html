@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="css/style.css" />
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css"rel="stylesheet"integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT"crossorigin="anonymous"/>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <!--Iconos-->
+    <script src="https://kit.fontawesome.com/d607a1eba4.js"crossorigin="anonymous"></script>
+
+    <!---sweetalert-->
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <title>Listado Clientes</title>
+  </head>
+  <body>
+    <header>
+         <!--Navbar-->
+    <nav class="navbar navbar-expand-lg bg-ligth">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">LOGO</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNavDropdown"
+          aria-controls="navbarNavDropdown"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#">Home</a>
+            </li>
+
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                Menu
+              </a>
+              <ul class="dropdown-menu">
+                <li>
+                  <a class="dropdown-item" href="listadoClientes.html">Clientes</a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="listadoVentas.html">Ventas</a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    </header>
+    <main>
+      <section class="listado-clientes">
+        <h1>Listado de clientes <i class="fa-solid fa-user"></i></h1>
+        
+        <div class="table-list">
+          <table class="table" id="tablaClientes">
+            <thead class="thead-dark">
+            <tr class="text-center">
+              <th scope="col">ID</th>
+              <th scope="col">Nombre</th>
+              <th scope="col">Direccion</th>
+              <th scope="col">Email</th>
+              <th scope="col">Ciudad</th>
+              <th scope="col">Opciones</th>
+
+                
+              </tr>
+            </thead>
+            
+            <tbody id="tablaC">
+            </tbody>
+          </table>
+        </div>
+
+          <!-- Button trigger modal -->
+<button type="button" class="btn btn-info" id="btnCliente">
+  Añadir Cliente <i class="fa-solid fa-user-plus"></i> </button>
+
+ <button type="button" id="botonB" class="btn btn-danger" onclick="borrar();"> Eliminar <i class="fa-solid fa-trash"></i> </button>
+
+ 
+
+<!-- Modal -->
+<div class="modal fade" id="modalCliente" tabindex="-1" aria-labelledby="modalCliente" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="modalClienteLabel">Crear Cliente <i class="fa-solid fa-user-plus"></i></h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form>
+        <div class="container">
+          <div class="row">
+            <div class="col-xs-12">
+              <div class="form-group">
+                <label for="nombre" class="control-label">ID<i class="fa fa-asterisk small text-danger"></i></label>
+                <input  id="identificador" type="number" class="form-control" name="identificador"  value="" />
+              </div>
+            </div>
+            <div class="col-xs-12">
+              <div class="form-group">
+                <label for="nombre" class="control-label">Nombre Completo<i class="fa fa-asterisk small text-danger"></i></label>
+                <input  id="nombre" type="text" class="form-control" name="nombre"  value="" />
+              </div>
+            </div>
+           
+            <div class="col-xs-12 col-sm-12">
+              <div class="form-group">
+                <label for="direccion" class="control-label">Dirección  <i class="fa fa-asterisk small text-danger"></i></label>
+                <input type="text" class="form-control" name="direccion" id="direccion" value="" />
+              </div>
+            </div>
+
+            <div class="col-xs-12">
+              <div class="form-group">
+                <div>
+                  <label for="correo" class="control-label">Email <i class="fa fa-asterisk small text-danger"></i></label>
+                  <input type="email" class="form-control" name="correo" id="correo" value="" placeholder="Introduce tu e-mail"/>          
+                </div>
+              </div>
+            </div>
+
+<div class="col-xs-12 col-sm-12" style="padding-bottom:10px;">
+              <div class="form-group">
+                <label for="ciudad" class="control-label">Ciudad  <i class="fa fa-asterisk small text-danger"></i></label>
+                <input type="text" class="form-control" name="ciudad" id="ciudad" value="" />
+              </div>
+            </div>
+          </div>
+        </div>
+        
+      </form>
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cerrar</button>
+        <button type="submit" class="btn btn-primary" id="submit" onclick="crearUser()">Añadir</button>
+      </div>
+    </div>
+  </div>
+</div>      
+
+      </section>
+    </main>
+  </body>
+  <script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8"
+    crossorigin="anonymous"
+  ></script>
+  <script src="js/funcion.js"></script>
+</html>

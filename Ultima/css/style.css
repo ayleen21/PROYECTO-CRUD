@@ -1,0 +1,72 @@
+.pagina-principal h1 {
+  color: #47b5ff;
+  text-align: center;
+  padding-bottom: 35px;
+  padding-top: 10px;
+}
+
+.pagina-principal {
+  padding: 1px 50px;
+}
+
+.pagina-principal p {
+  text-align: justify;
+  font-size: 20px;
+}
+
+.ropa {
+  width: 200px;
+  height: 300px;
+  margin: auto;
+  padding-top: 10px;
+}
+
+.listado-clientes {
+  padding: 10px 70px;
+}
+.listado-clientes h1 {
+  text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.listado-clientes i {
+  color: #47b5ff;
+}
+
+.table-list {
+  padding-top: 30px;
+}
+
+.listado-ventas {
+  padding: 10px 70px;
+}
+.listado-ventas h1 {
+  text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.listado-ventas i {
+  color: #47b5ff;
+}
+
+.botonLimpiar {
+  margin-left: 13px;
+}
+
+#selectn{
+  width: 200px;
+  padding-top: 7px;
+  padding-right: 80px;
+  padding-left: 68px;
+}
+
+#selectneto{
+  margin-bottom:8px;
+  width: 200px;
+
+  
+}
+
+#btnLimpiar{
+  margin-bottom: 10px;
+}
